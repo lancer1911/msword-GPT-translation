@@ -1,6 +1,6 @@
 # msword-GPT-translation
 
-[English](./readme.md)
+[English](./README.md)
 
 `msword-GPT-translation` 是一个使用 ChatGPT API 或 GPT-4 API 进行翻译的简单工具，可以实现 Microsoft Word 文档（`.docx` 格式）的翻译。它可以保留原始文档中的格式，并允许用户自定义字体。本工具适用于需要将 Word 文档翻译成其他语言的用户。
 
