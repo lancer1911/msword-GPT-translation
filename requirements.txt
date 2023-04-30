@@ -1,0 +1,6 @@
+openai
+python-docx
+requests
+configparser
+tkinter
+argparse

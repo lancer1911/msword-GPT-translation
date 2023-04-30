@@ -1,0 +1,12 @@
+[OpenAI]
+api_key = sk-
+model = gpt-3.5-turbo
+
+[Prompts]
+custom_prompt = Chemical terms and patent terms in English and Chinese
+source_lang = en
+target_lang = zh
+
+[ENDPOINTS]
+URL = https://api.openai.com/v1/chat/completions
+
