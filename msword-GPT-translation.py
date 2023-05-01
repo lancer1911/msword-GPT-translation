@@ -1,3 +1,9 @@
+"""
+Translate MS Word documents into other languages by ChatGPT or GPT-4 API.
+written by lancer1911
+May 1, 2023
+"""
+
 import openai
 import docx
 import requests
