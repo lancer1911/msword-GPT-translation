@@ -32,12 +32,19 @@ def translate_text(text, source_lang, target_lang, custom_prompt, model, tempera
     openai.api_key = api_key
     URL = config.get("ENDPOINTS", "URL")
 
+    if model == "gpt-3.5-turbo":
+        user_content = f"Translate the following {LANGUAGES[source_lang]} text to {LANGUAGES[target_lang]}: '{text}'"
+    elif model == "gpt-4":
+        user_content = f"{text}"
+    else:
+        raise ValueError("Invalid model specified in settings.cfg")
+
     payload = {
         "model": model,
         "temperature": temperature,
         "messages": [
-            {"role": "system", "content": f"You are a helpful assistant that translates {LANGUAGES[source_lang]} text to {LANGUAGES[target_lang]}."},
-            {"role": "user", "content": f"Translate the following {LANGUAGES[source_lang]} text to {LANGUAGES[target_lang]}: '{text}'"},
+            {"role": "system", "content": f"You are a professional translator particularly proficient in {custom_prompt}. You will translate {LANGUAGES[source_lang]} text to {LANGUAGES[target_lang]}. Please do not translate people's names, trademarks, and country codes. If you encounter any uncertain terms, please enclose the original text in parentheses after the translation."},
+            {"role": "user", "content": user_content},
         ],
     }
 
